@@ -10,7 +10,7 @@ from pathlib import Path
 
 # Configurable options
 
-IDENTITY = "OpenCore Legacy Patcher Software Signing"
+IDENTITY = "Apple Development: wxcznb@qq.com (636H9J6N4H)"
 TARGET_DIR = Path("Universal-Binaries")
 UNUSED = [
     # Mojave and Catalina non-Metal Patches
