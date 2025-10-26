@@ -1,0 +1,5 @@
+---
+triple:          'arm64e-apple-darwin'
+binary-path:     '/AppleInternal/Library/BuildRoots/4~B5TxugDU9nUxndkke6mcVlVilWK_ckCkjv7oB1I/Library/Caches/com.apple.xbs/Binaries/IOUSBFamily_kexts/install/TempContent/Root/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBCompositeDriver.kext/Contents/MacOS/IOUSBCompositeDriver'
+relocations:     []
+...

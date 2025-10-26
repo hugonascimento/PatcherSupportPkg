@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>23A344014</string>
+	<string>22A380019</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>IOUSBLib</string>
 	<key>CFBundleGetInfoString</key>
-	<string>900.4.2, Copyright © 2000-2024 Apple Inc. All Rights Reserved.</string>
+	<string>900.4.2, Copyright © 2000-2015 Apple Inc. All rights reserved.</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.apple.iokit.IOUSBLib</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -34,18 +34,18 @@
 	<string>NO</string>
 	<key>CFPlugInFactories</key>
 	<dict>
-		<key>4547a8aa-9ef3-11d4-a9bd-000a27052861</key>
+		<key>07E54656-5684-41BC-9CE2-0652A3B15A0D</key>
 		<string>IOUSBLibFactory</string>
 	</dict>
 	<key>CFPlugInTypes</key>
 	<dict>
 		<key>2d9786c6-9ef3-11d4-ad51-000a27052861</key>
 		<array>
-			<string>4547a8aa-9ef3-11d4-a9bd-000a27052861</string>
+			<string>07E54656-5684-41BC-9CE2-0652A3B15A0D</string>
 		</array>
 		<key>9dc7b780-9ec0-11d4-a54f-000a27052861</key>
 		<array>
-			<string>4547a8aa-9ef3-11d4-a9bd-000a27052861</string>
+			<string>07E54656-5684-41BC-9CE2-0652A3B15A0D</string>
 		</array>
 	</dict>
 	<key>CFPlugInUnloadFunction</key>
@@ -53,20 +53,20 @@
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>25A5279g</string>
+	<string></string>
 	<key>DTPlatformName</key>
 	<string>macosx</string>
 	<key>DTPlatformVersion</key>
-	<string>26.0</string>
+	<string>14.7</string>
 	<key>DTSDKBuild</key>
-	<string>25A5279g</string>
+	<string>23G1000s</string>
 	<key>DTSDKName</key>
-	<string>macosx26.0.internal</string>
+	<string>macosx14.7.internal</string>
 	<key>DTXcode</key>
-	<string>1700</string>
+	<string>1500</string>
 	<key>DTXcodeBuild</key>
-	<string>17A6231r</string>
+	<string>15E6079e</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>26.0</string>
+	<string>14.7</string>
 </dict>
 </plist>
