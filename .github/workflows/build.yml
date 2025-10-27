@@ -14,12 +14,20 @@ jobs:
   build_mojave:
     name: Zip and Upload Binaries
     runs-on: macos-14
+    if: github.repository_owner == 'hugonascimento'
+    
     steps:
       - uses: actions/checkout@v3
+      - uses: apple-actions/import-codesign-certs@8f3fb608891dd2244cdab3d69cd68c0d37a7fe93
+        with:
+          p12-file-base64: ${{ secrets.CERTIFICATES_P12 }}
+          p12-password: ${{ secrets.CERTIFICATES_P12_PASSWORD }}
+      - name: Clean, strip, and sign binaries
+        run: python3 ci.py
       - name: Tag folder
         run: touch Universal-Binaries/.signed
       - name: Build DMG
-        run: python3 Generate-DMG.command
+        run: python3 Generate-DMG.command --sign
       - name: Generate Checksums
         run: shasum -a 256 Universal-Binaries.dmg > sha256sum.txt
       - name: Upload Universal Binaries to Artifacts
@@ -35,6 +43,32 @@ jobs:
       - run: |
           mkdir deploy
           mv *.dmg sha256sum.txt deploy/
+      - name: Get commit message
+        id: commit_message
+        run: |
+          MESSAGE=$(git log -1 --pretty=%B)
+          MESSAGE="${MESSAGE//'%'/'%25'}"
+          MESSAGE="${MESSAGE//$'\n'/'%0A'}"
+          MESSAGE="${MESSAGE//$'\r'/'%0D'}"
+          echo "message=$MESSAGE" >> $GITHUB_OUTPUT
+      - name: Delete previous pre-release
+        if: github.event_name == 'push'
+        uses: dev-drprasad/delete-older-releases@v0.3.4
+        with:
+          keep_latest: 0
+          delete_prerelease_only: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create or Update pre-release
+        if: github.event_name == 'push'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: deploy/*
+          prerelease: true
+          generate_release_notes: false
+          tag_name: pre-release-${{ github.sha }}
+          name: Pre-Release NOT STABLE VERSION
+          body: ${{ steps.commit_message.outputs.message }}
       - name: Upload to Release
         if: github.event_name == 'release'
         uses: svenstaro/upload-release-action@1beeb572c19a9242f4361f4cee78f8e0d9aec5df
