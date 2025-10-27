@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>22A380019</string>
+	<string>23A344014</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>IOUSBLib</string>
 	<key>CFBundleGetInfoString</key>
-	<string>900.4.2, Copyright © 2000-2023 Apple Inc. All Rights Reserved.</string>
+	<string>900.4.2, Copyright © 2000-2024 Apple Inc. All Rights Reserved.</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.apple.iokit.IOUSBLib</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -53,20 +53,20 @@
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>23H621</string>
+	<string>25A5279g</string>
 	<key>DTPlatformName</key>
 	<string>macosx</string>
 	<key>DTPlatformVersion</key>
-	<string>14.7</string>
+	<string>26.0</string>
 	<key>DTSDKBuild</key>
-	<string>23H621</string>
+	<string>25A5279g</string>
 	<key>DTSDKName</key>
-	<string>macosx14.7.internal</string>
+	<string>macosx26.0.internal</string>
 	<key>DTXcode</key>
-	<string>1500</string>
+	<string>1700</string>
 	<key>DTXcodeBuild</key>
-	<string>15E6079e</string>
+	<string>17A6231r</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>14.7</string>
+	<string>26.0</string>
 </dict>
 </plist>
