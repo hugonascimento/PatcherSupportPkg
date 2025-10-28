@@ -15,7 +15,7 @@ DMG_SIZE:         str = "4096"
 DMG_FORMAT:       str = "UDRO"
 DMG_PASSPHRASE:   str = "password"
 SIGNING_IDENTITY: str = "Apple Development: hugo_nascimento@icloud.com (68G826Q379)"
-
+SHA256_OUTPUT:    str = "sha256sum.txt"
 
 class GenerateDiskImage:
 
@@ -28,6 +28,7 @@ class GenerateDiskImage:
         self._convert_dmg()
         if sign_dmg:
             self._sign_dmg()
+        self._generate_sha256()
         self._remove_tmp_dmg()
 
 
@@ -116,6 +117,15 @@ class GenerateDiskImage:
             print(f"STDOUT:\n{result.stdout.decode('utf-8')}")
             print(f"STDERR:\n{result.stderr.decode('utf-8')}")
             raise Exception("Failed to sign DMG")
+
+
+    def _generate_sha256(self) -> None:
+        result = subprocess.run(f"shasum -a 256 {DMG_NAME}", shell=True, capture_output=True, text=True)
+        if result.returncode == 0:
+            with open(SHA256_OUTPUT, 'w') as file:
+                file.write(result.stdout)
+        else:
+            raise Exception("Failed to generate SHA-256 sum")
 
 
     def _remove_tmp_dmg(self) -> None:
